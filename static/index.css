@@ -42,3 +42,18 @@
     .export-button:hover {
         background-color: #333;
     }
+    #siteSelect {
+        appearance: none;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 200px;
+    }
+
+    #siteSelect:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
