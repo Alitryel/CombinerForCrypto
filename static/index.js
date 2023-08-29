@@ -48,14 +48,12 @@ function applyFilter() {
     function downloadCSV() {
         const csvRows = [];
 
-        // Создаем заголовок CSV
         const headers = ['Address'];
         dataRows[0].querySelectorAll('td.data-cell').forEach(cell => {
             headers.push(cell.getAttribute('data-site'));
         });
         csvRows.push(headers.join(';'));
 
-        // Создаем строки данных CSV
         dataRows.forEach(row => {
             if (row.style.display !== 'none') {
             const cells = [row.querySelector('td:first-child').textContent];
