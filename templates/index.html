@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accounts checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+</head>
+<body>
+<header>
+    <input type="text" id="searchInput" placeholder="Search by account...">
+    <input type="number" id="filterInput" placeholder="Filter by value...">
+    <label>
+        <input type="checkbox" id="filterCondition" value="lessThan"> Less
+    </label>
+    <button class="export-button" onclick="downloadCSV()">Export CSV</button>
+
+    <select id="siteSelect" multiple>
+        {% for website in websites %}
+            <option value="{{ website.name }}">{{ website.name }}</option>
+        {% endfor %}
+    </select>
+</header>
+    <table>
+        <tr>
+            <th class="th-name">Address</th>
+            {% for website in websites %}
+                <th class="th-name" colspan="2">{{ website.name }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in data %}
+            <tr class="data-row">
+                <td>{{ row.address }}</td>
+                {% for website in websites %}
+                    <td class="data-cell" data-site="{{ website.name }}">{{ row[website.name][0] }}</td>
+                    <td>{{ row[website.name][1] }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+</body>
+</html>

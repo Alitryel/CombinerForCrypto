@@ -1,0 +1,44 @@
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #b71c1c;
+        color: #fff;
+        padding: 1rem;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    .th-name {
+        background-color: #444;
+        color: white;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    .export-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #444;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .export-button:hover {
+        background-color: #333;
+    }
